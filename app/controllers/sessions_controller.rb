@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
 	def new
      @user = User.new
- end
+  end
 #the following methods can be placed after the 'new' action method
    def create
        user = User.where( email: user_params[:email]).first
