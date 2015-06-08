@@ -43,7 +43,6 @@
                else
                    add = ""
                end %>
-               <%= button_to "View#{add} Comments", post_path(id: post.id), method: "get" %>
                <%= button_to "Edit Ya Post", edit_post_path(id: post.id), method: "get" %> 
                <%= button_to "Destroy Post", delete_post_path(id: post.id), method: "delete" %> 
            </div>

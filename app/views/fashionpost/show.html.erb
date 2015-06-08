@@ -26,34 +26,5 @@
            <div class="panel-body">
                <p><%= image_tag(@post.shoes_url) %></p>
            </div>
+<%= link_to "Edit this FashionPost", edit_post_path(@post), method: "get"%>
 
-
-
-   <div class="panel-footer">
-       <h4>Comments</h4>
-       <% if @post.comments.count > 0 %>
-           <% @post.comments.each do |comment| %>
-               <div class="panel panel-default">
-                   <div class="panel-body">
-                       <p><%= comment.body %></p>
-                       <h5><%= comment.user.email %>&nbsp;&nbsp;<small><%= comment.updated_at %></small></h5>
-                   </div>
-               </div>
-           <% end %>
-       <% else %>
-           <p>No Comments Yet</p>
-       <% end %>
-   </div>
-</div>
-<hr>
-
-<% if current_user %>
-   <%= form_for @comment, url: create_comment_path do |f| %>
-       <%= hidden_field_tag :post_id, @post.id %>
-       <div class="form-group">
-           <%= f.label :body, "Comment" %>
-           <%= f.text_area :body, class: "form-control" %>
-       </div>
-       <%= f.submit "Add Comment", class: "btn btn-default" %>
-   <% end %>
-<% end %>

@@ -10,12 +10,12 @@ Rails.application.routes.draw do
   post 'sessions/new' => 'sessions#create', as: :create_session
 
   get "/fashionpost" => "fashionpost#index", as: :posts
- get "/fashionpost/new" => "fashionpost#new", as: :new_post
- post "/fashionpost" => "fashionpost#create", as: :create_post
- get "/fashionpost/:id" => "fashionpost#show", as: :post
- get "/fashionpost/:id" => "fashionpost#edit", as: :edit_post
- delete "/fashionpost/:id" => "fashionpost#delete", as: :delete_post
- patch "/fashionpost/:id" => "fashionpost#update", as: :update_post
+  get "/fashionpost/new" => "fashionpost#new", as: :new_post
+  post "/fashionpost" => "fashionpost#create", as: :create_post
+  get "/fashionpost/:id" => "fashionpost#show", as: :post
+  get "/fashionpost/:id/edit" => "fashionpost#edit", as: :edit_post
+  delete "/fashionpost/:id" => "fashionpost#delete", as: :delete_post
+  patch "/fashionpost/:id" => "fashionpost#update", as: :update_post
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

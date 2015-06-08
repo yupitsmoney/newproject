@@ -22,8 +22,14 @@ class FashionpostController < ApplicationController
    end
 
    def update
+         @post = Fashionpost.find(params[:id])
 
-   end
+         if @post.update_attributes(post_params)
+           redirect_to posts_path(current_user)
+         else
+           render :edit
+         end
+    end
 
    def create
        post = Fashionpost.new(post_params)
